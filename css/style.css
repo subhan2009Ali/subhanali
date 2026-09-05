@@ -30,6 +30,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -222,6 +224,8 @@ body.cursor-active .cursor-ring { opacity: 1; }
   .nav-links {
     display: flex; flex-direction: column;
     position: fixed; top: 68px; left: 20px; right: 20px;
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
     background: var(--paper);
     border: 1px solid var(--line);
     padding: 20px;
@@ -594,7 +598,7 @@ body.hero-ready .liquid-word.in-view .liquid-char {
 
 @media (max-width: 760px) {
   .hero-title { max-width: none; }
-  .hero-visual { width: min(410px, 76vw); right: -90px; top: 66%; opacity: .42; }
+  .hero-visual { width: min(340px, 70vw); right: -50px; top: 66%; opacity: .42; }
   .hero-graphic { opacity: .35; }
   .hero-dot-b { display: none; }
   .hero-stat-count { display: none; }
@@ -1994,8 +1998,8 @@ body {
     -webkit-text-stroke-width: 1px;
   }
   .hero-visual {
-    width: min(430px, 96vw);
-    right: -128px;
+    width: min(340px, 80vw);
+    right: -50px;
     top: 71%;
     opacity: .56;
   }
@@ -2046,7 +2050,7 @@ body {
   .hero-inner { padding-top: 12vh; }
   .hero-title .fill,
   .hero-title .outline { font-size: clamp(3rem, 15vw, 4.5rem); }
-  .hero-visual { right: -148px; top: 70%; opacity: .48; }
+  .hero-visual { right: -60px; top: 70%; opacity: .48; }
   .hero-scroll { margin-top: 54px; }
   .stats-inner { grid-template-columns: 1fr 1fr; }
   .stat-item { min-height: 102px; }
