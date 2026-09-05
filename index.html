@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Subhan Ali — Full-Stack Developer, Python &amp; AI</title>
+<meta name="description" content="Subhan Ali is a full-stack web developer and Python developer from Sargodha, Pakistan, building web platforms, offline AI systems and automation." />
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Lora:ital@1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============ CUSTOM CURSOR ============ -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"><span></span></div>
+
+<!-- ============ PRELOADER ============ -->
+<div class="loader" id="loader">
+  <div class="loader-mark">S</div>
+  <div class="loader-status">Initializing <span>•••</span></div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="Subhan Ali — home">
+      <svg viewBox="0 0 40 48" width="26" height="30" fill="none">
+        <path d="M32 0L8 22V32L32 10V0Z" fill="currentColor"/>
+        <path d="M32 16L8 38V48L32 26V16Z" fill="currentColor"/>
+      </svg>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#hero" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#offer">Skills</a>
+      <a href="#work">Projects</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Let's Talk</a>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <!-- hero-pin-wrap gets its height set by JS (js/main.js → hero3D module) so
+       .hero below can be pinned via position:sticky while the user scrolls
+       through the 3D reconstruction frame sequence. -->
+  <div class="hero-pin-wrap" id="heroPinWrap">
+    <section class="hero" id="hero">
+      <div class="hero-cloud-scene" aria-hidden="true">
+        <img class="hero-cloud" src="images/hero-cloud.png" alt="" />
+        <span class="cloud-fog cloud-fog-a"></span>
+        <span class="cloud-fog cloud-fog-b"></span>
+        <span class="cloud-fog cloud-fog-c"></span>
+      </div>
+      <div class="hero-rock-field" id="heroRockField" aria-hidden="true">
+        <div class="rock-item rock-a" data-depth="9"><img src="images/rock-1.png" alt="" /></div>
+        <div class="rock-item rock-b" data-depth="13"><img src="images/rock-2.png" alt="" /></div>
+        <div class="rock-item rock-c" data-depth="7"><img src="images/rock-3.png" alt="" /></div>
+        <div class="rock-item rock-d" data-depth="11"><img src="images/rock-4.png" alt="" /></div>
+        <div class="rock-item rock-e" data-depth="8"><img src="images/rock-5.png" alt="" /></div>
+        <div class="rock-item rock-f" data-depth="12"><img src="images/rock-6.png" alt="" /></div>
+      </div>
+      <div class="hero-bg-grid" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="hero-topline reveal">
+          <span class="dot-live"></span> Available for work
+          <span class="sep">/</span> Sargodha, Pakistan
+        </div>
+
+        <p class="hero-glyphname reveal" data-delay="1">SUBHAN&nbsp;&nbsp;ALI</p>
+
+        <h1 class="hero-title" aria-label="Developer and Builder">
+          <span class="fill liquid-word reveal" data-delay="2">DEVELOPER</span>
+          <span class="outline liquid-word reveal" data-delay="3">&amp;&nbsp;BUILDER</span>
+        </h1>
+
+        <div class="hero-dot hero-dot-a" aria-hidden="true"></div>
+        <div class="hero-dot hero-dot-b" aria-hidden="true"></div>
+
+        <!-- Ambient halo only now — the orbit rings + energy system stay as
+             decoration behind the reconstruction sequence below. -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-graphic" aria-hidden="true">
+            <svg viewBox="0 0 420 460" class="hero-svg">
+              <defs>
+                <linearGradient id="gradCore" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#FF9142"/>
+                  <stop offset="100%" stop-color="#8A4E22"/>
+                </linearGradient>
+              </defs>
+              <g class="orbit-group">
+                <circle cx="210" cy="210" r="150" class="ring ring-1"/>
+                <circle cx="210" cy="210" r="110" class="ring ring-2"/>
+                <circle cx="210" cy="210" r="70" class="ring ring-3"/>
+                <circle cx="210" cy="60" r="6" class="node" fill="url(#gradCore)"/>
+                <circle cx="360" cy="210" r="5" class="node node-dim"/>
+                <circle cx="210" cy="360" r="5" class="node node-dim"/>
+                <circle cx="60" cy="210" r="6" class="node" fill="url(#gradCore)"/>
+              </g>
+              <g class="cross-lines">
+                <line x1="210" y1="0" x2="210" y2="420" />
+                <line x1="0" y1="210" x2="420" y2="210" />
+              </g>
+              <text x="210" y="222" text-anchor="middle" class="hero-svg-text">&lt;/&gt;</text>
+            </svg>
+          </div>
+          <div class="hero-energy-system" aria-hidden="true">
+            <span class="energy-orbit energy-orbit-a"></span>
+            <span class="energy-orbit energy-orbit-b"></span>
+            <span class="energy-orbit energy-orbit-c"></span>
+            <span class="energy-core"></span>
+            <span class="energy-beacon energy-beacon-a"></span>
+            <span class="energy-beacon energy-beacon-b"></span>
+          </div>
+          <div class="hero-spark spark-a" aria-hidden="true"></div>
+          <div class="hero-spark spark-b" aria-hidden="true"></div>
+          <div class="hero-spark spark-c" aria-hidden="true"></div>
+        </div>
+
+        <!-- ============ SCROLL-DRIVEN 3D FRAME SEQUENCE ============
+             Real frame_001.jpg…frame_048.jpg images are drawn onto this
+             canvas — no CSS/SVG/WebGL fakery. See js/main.js (hero3D
+             module) for the scroll-progress → frame-index logic. Sits in
+             the same visual slot the static portrait used to occupy,
+             framed by the halo/energy rings above and the floating rock
+             field already in this design. -->
+        <div class="hero-3d reveal" data-delay="2" id="hero3d" role="img" aria-label="3D animation of a stone statue reconstructing, controlled by scrolling">
+          <div class="portrait-aura" aria-hidden="true"></div>
+          <canvas id="hero3dCanvas"></canvas>
+          <span class="portrait-scanline" aria-hidden="true"></span>
+          <span class="portrait-label" aria-hidden="true">BUILD / 2026</span>
+          <div class="hero-3d-loader" id="hero3dLoader">
+            <span class="hero-3d-loader-bar"><i id="hero3dLoaderFill"></i></span>
+            <span class="hero-3d-loader-pct" id="hero3dLoaderPct">Loading 3D sequence… 0%</span>
+          </div>
+          <span class="hero-3d-tag" id="hero3dTag">Scroll · reconstruction sequence</span>
+        </div>
+
+        <div class="hero-stat-count reveal" data-delay="4">01</div>
+      </div>
+
+      <div class="hero-scroll reveal" data-delay="5">
+        <span>Scroll to explore</span>
+        <span class="scroll-line"><i></i></span>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats" aria-label="Highlights">
+    <div class="stats-inner">
+      <div class="stat-item reveal">
+        <div class="stat-num">04<span>+</span></div>
+        <div class="stat-label">Real Projects Shipped</div>
+      </div>
+      <div class="stat-item reveal" data-delay="1">
+        <div class="stat-num">20<span>+</span></div>
+        <div class="stat-label">Tools &amp; Technologies</div>
+      </div>
+      <div class="stat-item reveal" data-delay="2">
+        <div class="stat-num">100<span>/100</span></div>
+        <div class="stat-label">AI Course Assignment Score</div>
+      </div>
+      <div class="stat-item reveal" data-delay="3">
+        <div class="stat-num">06</div>
+        <div class="stat-label">Stages In The Journey</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="eyebrow reveal"><span>01</span><i></i>Who I Am</div>
+      <h2 class="section-title reveal" data-delay="1">About Me</h2>
+
+      <div class="about-grid">
+        <div class="about-photo reveal" data-delay="1">
+          <img src="images/profile.jpg" alt="Portrait of Subhan Ali" />
+        </div>
+        <div class="about-copy">
+          <h3 class="reveal">SUBHAN ALI</h3>
+          <p class="reveal" data-delay="1">
+            Hi, I'm Subhan — the developer you call when something needs to actually
+            work, not just look good in a screenshot. I build full-stack platforms,
+            Python tools and offline AI systems, and I learn every layer by shipping
+            something real with it.
+          </p>
+          <p class="reveal" data-delay="2">
+            I'm currently completing my Intermediate in Computer Science (ICS) at
+            Readers Group of Colleges, alongside building production-style apps with
+            Next.js, TypeScript and PostgreSQL, and offline voice-AI systems with
+            Vosk, Whisper and local LLMs. I don't mind the unglamorous backend work —
+            dashboards, auth, data models — because that's what makes a product
+            actually operable.
+          </p>
+          <a href="#contact" class="btn btn-gray reveal" data-delay="3">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT I WORK WITH (accordion) ============ -->
+  <section class="offer" id="offer">
+    <div class="section-inner">
+      <h2 class="section-title reveal">What I Work With?</h2>
+
+      <div class="accordion" id="accordion">
+        <!-- populated by JS from data below, static fallback provided -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="projects" id="work">
+    <!-- Theme tie-in with the hero: same halo-ring motif + a couple of
+         drifting rock fragments, echoing the reconstruction sequence. -->
+    <div class="projects-halo" aria-hidden="true"><span></span><span></span><span></span></div>
+    <img class="projects-rock projects-rock-a" src="images/rock-2.png" alt="" aria-hidden="true" />
+    <img class="projects-rock projects-rock-b" src="images/rock-5.png" alt="" aria-hidden="true" />
+    <div class="section-inner">
+      <div class="eyebrow eyebrow-light reveal"><span>03</span><i></i>Selected Work</div>
+      <h2 class="section-title section-title-light reveal" data-delay="1">My Projects</h2>
+
+      <div class="project-grid" id="projectGrid">
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATION (tape banner) ============ -->
+  <section class="cert-banner" aria-label="Certification">
+    <div class="tape-row tape-row-1">
+      <div class="tape-track">
+        <span>VERIFIED ✓</span><span>VERIFIED ✓</span><span>VERIFIED ✓</span><span>VERIFIED ✓</span>
+        <span>VERIFIED ✓</span><span>VERIFIED ✓</span><span>VERIFIED ✓</span><span>VERIFIED ✓</span>
+      </div>
+    </div>
+    <div class="cert-banner-text">
+      <span class="outline-txt">CERTIFIED</span>
+      <span class="fill-txt">CERTIFIED</span>
+    </div>
+    <div class="tape-row tape-row-2">
+      <div class="tape-track">
+        <span>VERIFIED ✓</span><span>VERIFIED ✓</span><span>VERIFIED ✓</span><span>VERIFIED ✓</span>
+        <span>VERIFIED ✓</span><span>VERIFIED ✓</span><span>VERIFIED ✓</span><span>VERIFIED ✓</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="certification" id="certification">
+    <div class="section-inner cert-inner">
+      <div class="cert-card reveal">
+        <img src="images/certificate.png" alt="Essentials of Artificial Intelligence certificate" class="cert-thumb" />
+        <div class="cert-details">
+          <h3>Essentials of Artificial Intelligence</h3>
+          <p class="cert-org">Bano Qabil Institute · 3-Month Course</p>
+          <div class="cert-meta">
+            <div><span>SR#</span>100085</div>
+            <div><span>Student ID</span>989688</div>
+            <div><span>Date</span>April 26, 2026</div>
+            <div><span>Score</span>100/100</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JOURNEY ============ -->
+  <section class="journey" id="journey">
+    <div class="section-inner">
+      <div class="eyebrow reveal"><span>04</span><i></i>How I Got Here</div>
+      <h2 class="section-title reveal" data-delay="1">The Journey</h2>
+      <div class="timeline" id="timeline"><!-- populated by JS --></div>
+    </div>
+  </section>
+
+  <!-- ============ TECH MARQUEE ============ -->
+  <section class="tech-marquee" aria-label="Technologies used">
+    <p class="marquee-label reveal">Tech I Reach For</p>
+    <div class="marquee">
+      <div class="marquee-track" id="marqueeTrack"></div>
+    </div>
+  </section>
+
+  <!-- ============ PHILOSOPHY QUOTE ============ -->
+  <section class="quote-section">
+    <div class="section-inner quote-inner">
+      <span class="quote-mark">&rdquo;</span>
+      <p class="quote-text reveal">
+        I learn by building things that have to actually run — not just compile.
+      </p>
+      <div class="quote-author reveal" data-delay="1">
+        <img src="images/profile.jpg" alt="" />
+        <div>
+          <strong>Subhan Ali</strong>
+          <span>Full-Stack &amp; Python Developer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <h2 class="section-title section-title-center reveal">Get In Touch</h2>
+
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <h4>Email</h4>
+          <a href="mailto:subhan.2009.com@gmail.com" class="contact-email">subhan.2009.com@gmail.com</a>
+
+          <h4 class="mt">Phone</h4>
+          <a href="tel:03260105327" class="contact-email">0326 0105327</a>
+
+          <h4 class="mt">Available For</h4>
+          <ul class="available-list">
+            <li>Web projects</li>
+            <li>Software projects</li>
+            <li>Automation</li>
+            <li>AI-related projects</li>
+          </ul>
+        </div>
+
+        <form class="contact-form reveal" data-delay="1" id="contactForm">
+          <h4>Write down your message here…</h4>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fName">Name</label>
+              <input type="text" id="fName" name="name" placeholder="Full name" required />
+            </div>
+            <div class="form-field">
+              <label for="fEmail">Email</label>
+              <input type="email" id="fEmail" name="email" placeholder="Email address" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="fSubject">Subject</label>
+            <input type="text" id="fSubject" name="subject" placeholder="What's this about?" />
+          </div>
+          <div class="form-field">
+            <label for="fMessage">Message</label>
+            <textarea id="fMessage" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark btn-submit">
+            Send Message <span class="arrow">→</span>
+          </button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="#hero" class="footer-logo" aria-label="Subhan Ali — home">
+        <svg viewBox="0 0 40 48" width="30" height="36" fill="none">
+          <path d="M32 0L8 22V32L32 10V0Z" fill="currentColor"/>
+          <path d="M32 16L8 38V48L32 26V16Z" fill="currentColor"/>
+        </svg>
+      </a>
+      <p class="footer-note">Currently studying ICS while building full-stack, Python and AI systems — <a href="mailto:subhan.2009.com@gmail.com">say hello</a>.</p>
+    </div>
+
+    <nav class="footer-links">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#offer">Skills</a>
+      <a href="#work">Projects</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="footer-bottom">
+      <span>Sargodha, Pakistan</span>
+      <span>Design by Subhan Ali</span>
+      <span>© 2026 Subhan Ali</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal for project details -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
